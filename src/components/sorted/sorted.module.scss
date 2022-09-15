@@ -1,0 +1,54 @@
+$black: #363839;
+$lightgray: #9c9e9f;
+$blackBr: black;
+$white: #fff;
+$green: #06842c;
+
+.wraper {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 15px 0;
+    label {
+        position: relative;
+        top: 3px;
+        left: 7px;
+    }
+    input[type="radio"] {
+        position: relative;
+        top: 6px;
+        width: 1.3em;
+        height: 1.3em;
+        color: $black;
+        border: 1px solid $blackBr;
+        border-radius: 4px;
+        appearance: none;
+        outline: 0;
+        cursor: pointer;
+        transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+        &::before {
+          position: absolute;
+          content: '';
+          display: block;
+          top: 2px;
+          left: 5px;
+          width: 6px;
+          height: 10px;
+          border-style: solid;
+          border-color: $white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          opacity: 0;
+        }
+        &:checked {
+          color: $white;
+          border-color: $green;
+          background: $green;
+          &::before {
+            opacity: 1;
+          }
+          ~ label::before {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          }
+        }
+      }
+}

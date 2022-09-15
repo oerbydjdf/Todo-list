@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import AddsEntry from './components/addsENtry/AddsEntry';
+import TodoList from './components/todoList/TodoList';
+import Sorted from './components/sorted/Sorted';
+import StoreTodoList from './store/StoreTodoList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Todo list</h1>
+      <h2>A simple  todo list app using MERN stack</h2>
+      <Sorted getnumSordet={StoreTodoList.getSortedNum}/>
+      <AddsEntry sort={StoreTodoList.setTodoList}/>
+      <TodoList list={StoreTodoList}/>
     </div>
   );
 }
