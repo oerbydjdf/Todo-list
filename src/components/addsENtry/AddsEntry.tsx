@@ -7,13 +7,14 @@ interface SortProps {
 }
 
 const AddsEntry = ({sort}: SortProps) => {
-    let [text, setText] = useState<string>(' ');
+    let [text, setText] = useState<string>('');
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setText(event.target.value);
     }
 
     const clickHandler = (e: React.MouseEvent) => {
+        if(text == '') return;
         sort(text);
         setText('');
     }
