@@ -124,6 +124,20 @@ $green: #06842c;
         padding: 0 5px;
         font-size: 20px;
       }
+      @media (max-width: 500px) {
+        .inputEdit {
+          left: 80px;
+          top: 14px;
+          min-width: 60%;
+
+        }
+      }
+      @media (max-width: 360px) {
+        .inputEdit {
+          width: 100px;
+
+        }
+      }
 }
 .wraperNone {
   display: none;

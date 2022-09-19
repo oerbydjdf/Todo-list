@@ -16,7 +16,8 @@ const TodoList = (props: ListProps) => {
     let list = props.list.arrTodoList.map((e, i: number) => {
         return (
             <div key={i} className={(storeTL.sortedList(i))? s.wraper: s.wraperNone}>
-               <input onChange={() => storeTL.changeHandler(i)} checked={storeTL.arrChecked.includes(i) ? true : false} type="checkbox" key={i} name="todo" />
+                <div style={{display: 'flex'}}>
+                <input onChange={() => storeTL.changeHandler(i)} checked={storeTL.arrChecked.includes(i) ? true : false} type="checkbox" key={i} name="todo" />
                 {
                     (window.matchMedia("(max-width: 500px)").matches) ?
                     <button onClick={() => storeTL.handlClickDel(i)} className={s.del}></button> :
@@ -27,6 +28,7 @@ const TodoList = (props: ListProps) => {
                     <button onClick={() => storeTL.hadlClickEdit(i, e)} className={s.edit}></button> :
                     <button onClick={() => storeTL.hadlClickEdit(i, e)} className={s.edit}>Ред-вать</button>
                 }
+                </div>
                 {
                     (storeTL.indexEdit == i) ?
                     <>
